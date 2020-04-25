@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ page.title }}</title>
+</head>
+<body>
+     <h2>{{ page.title }}</h2>
+     <p>{{ page.body }}</p>
+
+     <p>倒计时: <span id="Time">5</span></p>
+     <p id="static_url" style="display:none;"> <small><a href='{{ page.get_static_page_url }}'>跳转到静态文件</a></small></p>
+
+
+
+<script>
+ //使用匿名函数方法
+ function countDown(){
+ var time = document.getElementById("Time");
+ var p = document.getElementById("static_url");
+ //获取到id为time标签中的内容，现进行判断
+ if(time.innerHTML == 0){
+ //等于0时, 显示静态HTML文件URL
+ p.style.display = "block";
+ }else{
+ time.innerHTML = time.innerHTML-1;
+ }
+
+ }
+ //1000毫秒调用一次
+ window.setInterval("countDown()",1000);
+ </script>
+
+</body>
+</html>
+
+

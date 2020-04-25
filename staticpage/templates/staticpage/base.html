@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加页面</title>
+</head>
+<body>
+     <h2>添加页面</h2>
+     <form name="myform"  method="POST" action=".">
+         {% csrf_token %}
+        {{ form.as_p }}
+         <button type="submit">Submit</button>
+     </form>
+</body>
+</html>
